@@ -27,6 +27,7 @@ export default (state = initialState, { type, payload }) => {
       return {
         ...initialState,
         isError: true,
+        isLoading: false,
       };
     case CREATE_COMMENT_START:
       return { ...state, isLoading: true };
@@ -41,6 +42,7 @@ export default (state = initialState, { type, payload }) => {
       return {
         ...state,
         isError: true,
+        isLoading: false,
       };
     default:
       return state;

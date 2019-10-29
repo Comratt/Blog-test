@@ -95,6 +95,11 @@ const PostDetails = ({
   if (users.isLoading || posts.isLoading) {
     return null;
   }
+  console.log(posts.isError);
+
+  if (users.isError || posts.isError || comments.isError) {
+    return <h1>Error on page!</h1>;
+  }
 
   return (
     <div>

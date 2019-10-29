@@ -73,6 +73,10 @@ const UserDetails = ({
     return errors;
   };
 
+  if (users.isError || posts.isError) {
+    return <h1>Error on page!</h1>;
+  }
+
   return (
     <div>
       <Header userInfo={userInfo} history={history} hasAddButton actionHandler={openModal} />

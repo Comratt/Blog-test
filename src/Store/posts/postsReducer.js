@@ -29,6 +29,7 @@ export default (state = initialState, { type, payload }) => {
       return {
         ...initialState,
         isError: true,
+        isLoading: false,
       };
     case DELETE_POST_SUCCESS:
       return {
@@ -40,6 +41,7 @@ export default (state = initialState, { type, payload }) => {
       return {
         ...state,
         isError: true,
+        isLoading: false,
       };
     case CREATE_POST_START:
       return {
@@ -56,6 +58,7 @@ export default (state = initialState, { type, payload }) => {
       return {
         ...state,
         isError: true,
+        isLoading: false,
       };
     default:
       return state;
