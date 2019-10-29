@@ -11,7 +11,6 @@ const Input = ({ type, value, onChane, name, isRequired, hasError, label, ...res
       {/* <label htmlFor={name}>{label}</label> */}
       <StyledInput
         addonBefore={label}
-        id={name}
         value={value}
         type={type}
         name={name}

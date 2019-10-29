@@ -62,6 +62,7 @@ const PostDetails = ({
   const closeModal = () => setShowModal(false);
 
   const handleSubmit = values => {
+    console.log(values);
     const formData = {
       ...values,
       userId: match.params.userId,
@@ -134,7 +135,6 @@ const PostDetails = ({
                   name="email"
                   value={values.email}
                   onChane={handleChange}
-                  regExp={emailRegExp}
                   isRequired
                   hasError={errors.email && touched.email}
                 />
