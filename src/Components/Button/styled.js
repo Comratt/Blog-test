@@ -1,15 +1,15 @@
 import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
+import { Button } from 'antd';
 
 export const buttonStyles = css`
-  border: 2px solid black;
-  padding: 15px 25px;
-  cursor: pointer;
-  display: flex;
   position: relative;
+  padding: 5px 10px;
+  border: 1px solid #1890ff;
+  border-radius: 4px;
 `;
 
-export const StyledButton = styled.button`
+export const StyledButton = styled(Button)`
   ${buttonStyles};
   opacity: ${props => (props.disabled ? '.6' : '1')};
   ${props => props.additionalStyles || ''};

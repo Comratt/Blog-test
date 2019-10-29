@@ -9,18 +9,22 @@ import { UserTypes } from '../../Helpers';
 import Button from '../Button';
 
 // Styled
-import { Wrapper, Contacts } from './styled';
+import { Wrapper } from './styled';
 
 const Card = ({ user }) => {
   return (
     <Wrapper className="Card">
       <p>{user.name}</p>
-      <Contacts>
+      <p>
         <a href={`mailto:${user.email}`}>{user.email}</a>
+      </p>
+      <p>
         <a href={`tel:${user.phone}`}>{user.phone}</a>
+      </p>
+      <p>
         <a href={user.website}>{user.website}</a>
-      </Contacts>
-      <Button as="a" href={`/user/${user.id}`}>
+      </p>
+      <Button as="a" href={`/user/${user.id}`} type="primary" ghost>
         Details
       </Button>
     </Wrapper>

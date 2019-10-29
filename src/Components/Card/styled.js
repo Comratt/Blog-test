@@ -1,9 +1,8 @@
 import styled from 'styled-components';
+import { Card as StyledCard } from 'antd';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled(StyledCard)`
   width: 310px;
-  border: 1px solid black;
-  padding: 20px;
   margin-bottom: 20px;
   margin-left: 20px;
 `;

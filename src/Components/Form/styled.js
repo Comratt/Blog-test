@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Input } from 'antd';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -10,10 +11,10 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const StyledInput = styled.input`
-  border: 1px solid ${props => props.hasError ? 'red' : 'black'};
+export const StyledInput = styled(Input)`
+  border: 1px solid ${props => props.hasError ? 'red' : 'transparent'};
 `;
 
-export const StyledTextarea = styled.textarea`
-  border: 1px solid ${props => props.hasError ? 'red' : 'black'};
+export const StyledTextarea = styled(Input.TextArea)`
+  border: 1px solid ${props => props.hasError ? 'red' : 'transparent'};
 `;

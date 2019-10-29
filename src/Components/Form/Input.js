@@ -8,8 +8,9 @@ import { StyledInput, Wrapper } from './styled';
 const Input = ({ type, value, onChane, name, isRequired, hasError, label, ...rest }) => {
   return (
     <Wrapper>
-      <label htmlFor={name}>{label}</label>
+      {/* <label htmlFor={name}>{label}</label> */}
       <StyledInput
+        addonBefore={label}
         id={name}
         value={value}
         type={type}
