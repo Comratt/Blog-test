@@ -8,7 +8,7 @@ import { reducersHandler } from '../../Helpers';
 import { FETCH_USERS_START, FETCH_USERS_SUCCESS, FETCH_USERS_FAILURE } from './actionTypes';
 
 export const fetchUsers = () => dispatch => {
-  dispatch({ type: FETCH_USERS_START });
+  dispatch(FETCH_USERS_START);
   return axios
     .get('users')
     .then(response => {
@@ -18,7 +18,7 @@ export const fetchUsers = () => dispatch => {
 };
 
 export const fetchUser = (userId = '') => dispatch => {
-  dispatch({ type: FETCH_USERS_START });
+  dispatch(FETCH_USERS_START);
   return axios
     .get(`users/${userId}`)
     .then(response => {

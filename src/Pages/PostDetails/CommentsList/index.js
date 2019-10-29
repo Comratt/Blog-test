@@ -8,15 +8,11 @@ import CommentCard from '../../../Components/CommentCard';
 // Styled
 import { Wrapper } from './styled';
 
-const CommentsList = ({ isLoading, isError, data }) => {
-  if (isLoading) {
-    return 'Loading...';
-  }
-
+const CommentsList = ({ isError, data }) => {
   return (
     <Wrapper>
       {data.map(comment => (
-        <CommentCard comment={comment} />
+        <CommentCard key={comment.id} comment={comment} />
       ))}
     </Wrapper>
   );

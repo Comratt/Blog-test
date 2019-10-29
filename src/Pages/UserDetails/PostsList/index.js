@@ -7,15 +7,11 @@ import PostCard from '../../../Components/PostCard';
 // Styled
 import { Wrapper } from './styled';
 
-const PostsList = ({ data, isLoading, isError }) => {
-  if (isLoading) {
-    return 'Loading ...';
-  }
-
+const PostsList = ({ data, isError, deletePost }) => {
   return (
     <Wrapper>
       {data.map(post => (
-        <PostCard key={post.id} post={post} />
+        <PostCard key={post.id} post={post} deletePost={() => deletePost(post.id)} />
       ))}
     </Wrapper>
   );

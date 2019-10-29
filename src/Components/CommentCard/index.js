@@ -2,10 +2,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// Helpers
+import { CommentTypes } from '../../Helpers';
+
 // Styled
 import { Wrapper, Head, Name, Email, Body } from './styled';
 
-export default ({ comment }) => (
+const CommentCard = ({ comment }) => (
   <Wrapper>
     <Head>
       <Name>{comment.name}</Name>
@@ -14,3 +17,9 @@ export default ({ comment }) => (
     <Body>{comment.body}</Body>
   </Wrapper>
 );
+
+CommentCard.propTypes = {
+  comment: PropTypes.shape(CommentTypes).isRequired,
+};
+
+export default CommentCard;

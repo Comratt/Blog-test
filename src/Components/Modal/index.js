@@ -3,11 +3,8 @@ import React  from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
-// Components
-import Button from '../Button';
-
 // Styled
-import { Overlay, Content, Footer, Title } from './styled';
+import { Overlay, Content, Title } from './styled';
 
 class Modal extends React.Component {
   constructor(props) {
@@ -22,19 +19,22 @@ class Modal extends React.Component {
   }
 
   render() {
-    const { title, children, onClose, onAction } = this.props;
+    const { title, children } = this.props;
     return ReactDOM.createPortal(
-      <Overlay onClick={onClose}>
-        <Title>{title}</Title>
-        <Content>{children}</Content>
-        <Footer>
-          <Button onClick={onClose}>Cancel</Button>
-          <Button onClick={onAction}>Save</Button>
-        </Footer>
+      <Overlay>
+        <Content>
+          <Title>{title}</Title>
+          {children}
+        </Content>
       </Overlay>,
       this.modalRoot
     );
   }
 }
+
+Modal.propTypes = {
+  title: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+};
 
 export default Modal;

@@ -1,5 +1,6 @@
 // Absolute imports
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // Icons
 import { ArrowLeft } from '../Icons';
@@ -13,5 +14,11 @@ const BackButton = ({ history }) => (
     <span>Back</span>
   </Wrapper>
 );
+
+BackButton.propTypes = {
+  history: PropTypes.shape({
+    goBack: PropTypes.func,
+  }).isRequired,
+};
 
 export default BackButton;

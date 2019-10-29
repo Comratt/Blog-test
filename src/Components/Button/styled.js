@@ -11,10 +11,14 @@ export const buttonStyles = css`
 
 export const StyledButton = styled.button`
   ${buttonStyles};
+  opacity: ${props => (props.disabled ? '.6' : '1')};
+  ${props => props.additionalStyles || ''};
 `;
 
 export const StyledLink = styled(Link)`
   ${buttonStyles};
   text-decoration: none;
   color: black;
+  opacity: ${props => (props.disabled ? '.6' : '1')};
+  ${props => props.additionalStyles || ''};
 `;

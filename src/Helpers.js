@@ -2,6 +2,10 @@ import PropTypes from 'prop-types';
 
 export const reducersHandler = (type, data) => ({ type, payload: data });
 
+export const emailRegExp = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;
+
+export const isBeetwen = (value, from, to) => value >= from && value <= to;
+
 export const UserTypes = {
   id: PropTypes.number,
   name: PropTypes.string,

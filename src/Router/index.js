@@ -1,6 +1,7 @@
 // Absolute imports
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import LoadingBar from 'react-redux-loading-bar';
 
 // Containers
 import PageContainer from '../Containers/PageContainer';
@@ -14,7 +15,7 @@ const UndefinedRoute = () => <h1>404</h1>;
 
 export default () => (
   <Router>
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<LoadingBar tyle={{ height: '7px' }} progressIncrease={1} showFastActions />}>
       <PageContainer>
         <Switch>
           <Route path="/" component={Home} exact />

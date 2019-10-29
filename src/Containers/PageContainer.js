@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import LoadingBar from 'react-redux-loading-bar';
 
 // #region Styled
 const Container = styled.div`
@@ -22,7 +23,12 @@ const Container = styled.div`
 `;
 // #endregion
 
-const PageContainer = ({ children }) => <Container>{children}</Container>;
+const PageContainer = ({ children }) => (
+  <div>
+    <LoadingBar updateTime={80} showFastActions style={{ height: '7px' }} />
+    <Container>{children}</Container>
+  </div>
+);
 
 PageContainer.propTypes = {
   children: PropTypes.node.isRequired,

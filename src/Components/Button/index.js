@@ -9,21 +9,31 @@ import Ripple from '../Ripple';
 import { StyledButton, StyledLink } from './styled';
 
 const Button = props => {
-  const { children, as, href, ...rest } = props;
+  const { children, as, href, disabled, additionalStyles, ...rest } = props;
 
   const renderContent = () => {
     if (as === 'a') {
-      return <StyledLink to={href} {...rest}><Ripple />{children}</StyledLink>;
+      return (
+        <StyledLink additionalStyles={additionalStyles} disabled={disabled} to={href} {...rest}>
+          <Ripple />
+          {children}
+        </StyledLink>
+      );
     }
 
-    return <StyledButton {...rest}><Ripple />{children}</StyledButton>;
+    return (
+      <StyledButton additionalStyles={additionalStyles} disabled={disabled} {...rest}>
+        <Ripple />
+        {children}
+      </StyledButton>
+    );
   };
 
   return renderContent();
 };
 
 Button.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
   onClick: PropTypes.func,
   className: PropTypes.string,
   as: PropTypes.string,

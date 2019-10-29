@@ -1,18 +1,5 @@
 import styled from 'styled-components';
 
-export const Head = styled.div`
-  display: flex;
-`;
-
-export const Title = styled.p`
-  font-size: 24px;
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-`;
-
 export const Body = styled.div``;
 
 export const PostTitle = styled.p`
@@ -34,4 +21,9 @@ export const CommentButton = styled.span`
   color: blue;
   text-decoration: underline;
   cursor: pointer;
+`;
+
+export const Footer = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;

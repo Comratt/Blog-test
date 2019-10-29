@@ -65,7 +65,6 @@ class Ripple extends Component {
 }
 
 Ripple.propTypes = {
-  children: PropTypes.node.isRequired,
   animationDuration: PropTypes.number,
   color: PropTypes.string,
   shadow: PropTypes.bool,

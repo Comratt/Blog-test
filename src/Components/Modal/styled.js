@@ -23,11 +23,6 @@ export const Content = styled.div`
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
 `;
 
-export const Footer = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
 export const Title = styled.p`
   font-size: 24px;
 `;
